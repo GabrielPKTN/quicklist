@@ -23,12 +23,12 @@ function showItemsList() {
         sectionList.innerHTML += `
             <div class="item">
                 <div>
-                    <input type="checkbox" name="list" id="${index}">
+                    <input type="checkbox" name="list" id="${index}" ${item.checked && "checked"}>
                     
-                    <div class="custom-checkbox">
+                    <div class="custom-checkbox" onclick="checkItem('${item.name}')">
                         <img src="./assets/checked.svg" alt="checked">
                     </div>
-                    <label for="${index}">${item.name}</label>
+                    <label for="${index}" onclick="checkItem('${item.name}')">${item.name}</label>
                 </div>
 
                 <button onclick="removeItem('${item.name}')">
